@@ -1,21 +1,18 @@
 package org.example;
 
-import java.io.FileReader;
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class Task4 {
     public static void main(String[] args){
-        List<Integer> nums = new ArrayList<Integer>();
-        String file = args[0];
-        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line = br.readLine();
-            while (line != null) {
-                nums.add(Integer.parseInt(line));
-                line = br.readLine();
+        try {
+            List<Integer> nums = new ArrayList<>();
+            try (Scanner scanner = new Scanner(System.in)) {
+                while (scanner.hasNextInt()) {
+                    nums.add(scanner.nextInt());
+                }
             }
             Collections.sort(nums);
             if (nums.size()%2 == 0) {
@@ -37,7 +34,7 @@ public class Task4 {
                 System.out.println(count);
             }
         }
-        catch (IOException e){
+        catch (Exception e){
             System.out.println("error");
         }
     }
