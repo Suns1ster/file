@@ -1,7 +1,11 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
+application {
+    mainClass = 'org.example.Task4'
+}
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
