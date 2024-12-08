@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'application' // Добавляем плагин для запуска
+    id 'application'
 }
 
 application {
